@@ -1,0 +1,36 @@
+bebin azinja() {
+
+bechap("Sieve of Eratosthenes");
+bechap("Please enter a number...");
+
+maxPrime = adadBekhoon();
+
+index = maxPrime;
+numbersList = jadid();
+
+ta ( index > 0) bood {
+ numbersList[index] = true;
+ index = index - 1;
+} 
+
+bechap("Here is the list of prime numbers up to " + maxPrime + " :");
+
+i = 2;
+ta (i*i <= maxPrime) bood {
+ age (numbersList[i] == true) bood {
+   j = i * i;
+   ta ( j <= maxPrime) bood {
+    numbersList[j] = false;
+    j = j + i;
+   }
+ }
+ i = i + 1;
+}
+
+ta (maxPrime > 1) bood {
+ age (numbersList[maxPrime] == true) bood {
+  bechap(maxPrime);
+ }
+ maxPrime = maxPrime - 1;
+}
+}
